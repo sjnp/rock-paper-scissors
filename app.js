@@ -26,7 +26,6 @@ for (let i = 0; i < handEmojis.length; i ++) {
 
 const startGame = () => {
 
-    round += 1;
     // Render rock, paper, scissors button
     const renderGame = () => { 
         gamePanel.innerHTML = "";
@@ -37,13 +36,10 @@ const startGame = () => {
 
     resultPanel.innerHTML = "";
     renderGame()
-
-    
-
 };
 
 const play = (objButton) => {
-    console.log("play")
+    round += 1;
     const playerPick = objButton.value;
     const computerPick = handEmojis[Math.floor(Math.random() * handEmojis.length)];
     const playerIsWin = ((playerPick === handEmojis[0]) && (computerPick === handEmojis[2]) ||
